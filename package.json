@@ -1,7 +1,7 @@
 {
-  "name": "template-ts",
+  "name": "watch-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "A watch that displays the current time and more ... ^^",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/",
@@ -11,7 +11,7 @@
     "start": "webpack serve --mode development --config webpack.config.js",
     "all": "npm run build && npm run start"
   },
-  "author": "",
+  "author": "Lo1176",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
