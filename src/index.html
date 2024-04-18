@@ -3,11 +3,22 @@
 
 <head>
     <meta charset="utf-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>
+
 <body>
-    <h1>Title</h1>
+    <h1>Le maître du temps</h1>
+    <div id="time" class="light">
+        <p id="hours-and-minutes"></p>
+        <p id="seconds"></p>
+
+        <button id="mode-toggle">Mode (off)</button>
+        <button id="increase-time">+ 1</button>
+    </div>
 </body>
+
 </html>
