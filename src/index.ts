@@ -70,14 +70,8 @@ toggleLight &&
   toggleLight.addEventListener('click', () => {
     controller.handleLightToggle();
     toggleLight.innerText = view.displayLightStatus(model.isLightOn());
-    clock && model.isLightOn() && clock.classList.toggle('active');
+    clock && clock.classList.toggle('active');
   });
-
-console.log('🌴 ', model.isLightOn());
-
-// clock && model.isLightOn() && clock.classList.toggle('active');
-
-// lightOn && clock && clock.classList.toggle('active');
 
 // modeToggleBtn &&
 //   modeToggleBtn.addEventListener('click', () => {

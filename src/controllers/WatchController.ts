@@ -35,7 +35,6 @@ export class WatchController {
     const currentTime: Date = this.model.getCurrentTime();
     const lightOn: boolean = this.model.isLightOn();
     this.view.displayTime(currentTime);
-    console.log('🚀 ~ WatchController ~ updateView ~ lightOn:', lightOn);
     this.view.displayLightStatus(lightOn);
   }
 
