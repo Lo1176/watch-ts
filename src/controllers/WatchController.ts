@@ -22,6 +22,10 @@ export class WatchController {
     }
   }
 
+  handleLightToggle(): void {
+    this.model.toggleLight();
+  }
+
   handleResetTime(): void {
     this.model.resetTime();
     this.updateView();
@@ -29,6 +33,17 @@ export class WatchController {
 
   updateView(): void {
     const currentTime: Date = this.model.getCurrentTime();
-    return this.view.displayTime(currentTime);
+    // console.log(
+    //   '🕗 ~ WatchController ~ updateView ~ currentTime:',
+    //   currentTime
+    // );
+    // const lightOn: boolean = this.model.isLightOn();
+    this.view.displayTime(currentTime);
+    // this.view.displayLightStatus(lightOn);
+  }
+
+  handleToggleFormat(): void {
+    this.model.toggleTimeFormat();
+    this.updateView();
   }
 }

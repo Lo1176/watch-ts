@@ -1,13 +1,21 @@
 export class WatchModel {
   private time: Date;
+  private increase: { hour: number; minute: number } = { hour: 0, minute: 0 };
   private mode: string;
+  private lightOn: boolean;
+  private is24HourFormat: boolean = true;
 
   constructor() {
     this.time = new Date();
     this.mode = 'none';
+    this.lightOn = false;
   }
 
   getCurrentTime(): Date {
+    this.time = new Date();
+    console.log('incr ', this.increase);
+    this.time.setHours(this.time.getHours() + this.increase.hour);
+    this.time.setMinutes(this.time.getMinutes() + this.increase.minute);
     return this.time;
   }
 
@@ -29,15 +37,32 @@ export class WatchModel {
     }
   }
 
-  increaseTime(): void {
+  increaseTime(): Object {
     if (this.mode === 'hour') {
-      this.time.setHours(this.time.getHours() + 1);
+      this.increase.hour += 1;
     } else if (this.mode === 'minute') {
-      this.time.setMinutes(this.time.getMinutes() + 1);
+      this.increase.minute += 1;
     }
+    return this.increase;
+  }
+
+  isLightOn(): boolean {
+    return this.lightOn;
+  }
+
+  toggleLight(): void {
+    this.lightOn = !this.lightOn;
   }
 
   resetTime(): void {
-    this.time = new Date();
+    this.increase = { hour: 0, minute: 0 };
+  }
+
+  toggleTimeFormat(): void {
+    this.is24HourFormat = !this.is24HourFormat;
+  }
+
+  getTimeFormat(): string {
+    return this.is24HourFormat ? 'HH:mm:ss' : 'hh:mm:ss A';
   }
 }
