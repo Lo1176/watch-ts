@@ -15,14 +15,25 @@ body {
 #clock {
   display: flex;
   align-items: baseline;
+  justify-content: center;
+  width: 180px;
+  margin: 8px 0;
+  padding: 14px 48px;
+  border: 1px solid #c0c0ff;
+  border-radius: 8px;
+  background-color: aliceblue;
   gap: 4px;
 }
 
-.active {
-  color: white;
-  background-color: darkorange;
-  /* border-bottom: 5px solid $purple;
-  padding-bottom: 1rem; */
+#clock.active {
+  background-color: #fffa00;
+}
+
+.buttons > button {
+  background-color: #f4f4ff;
+  border-radius: 4px;
+  padding: 4px;
+  margin-right: 2px;
 }
 
 #hours-and-minutes {
