@@ -33,13 +33,10 @@ export class WatchController {
 
   updateView(): void {
     const currentTime: Date = this.model.getCurrentTime();
-    // console.log(
-    //   '🕗 ~ WatchController ~ updateView ~ currentTime:',
-    //   currentTime
-    // );
-    // const lightOn: boolean = this.model.isLightOn();
+    const lightOn: boolean = this.model.isLightOn();
     this.view.displayTime(currentTime);
-    // this.view.displayLightStatus(lightOn);
+    console.log('🚀 ~ WatchController ~ updateView ~ lightOn:', lightOn);
+    this.view.displayLightStatus(lightOn);
   }
 
   handleToggleFormat(): void {

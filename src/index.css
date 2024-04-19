@@ -12,10 +12,17 @@ body {
   z-index: 1;
 }
 
-#time {
+#clock {
   display: flex;
   align-items: baseline;
   gap: 4px;
+}
+
+.active {
+  color: white;
+  background-color: darkorange;
+  /* border-bottom: 5px solid $purple;
+  padding-bottom: 1rem; */
 }
 
 #hours-and-minutes {

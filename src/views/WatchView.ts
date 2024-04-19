@@ -32,7 +32,7 @@ export class WatchView {
     }
   }
 
-  // displayLightStatus(lightOn: boolean): void {
-  //   console.log(lightOn ? 'Light is on' : 'Light is off');
-  // }
+  displayLightStatus(lightOn: boolean): string {
+    return lightOn ? 'Light on' : 'Light off';
+  }
 }

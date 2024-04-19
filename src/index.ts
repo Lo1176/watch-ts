@@ -62,3 +62,25 @@ toggleFormatBtn &&
   toggleFormatBtn.addEventListener('click', () => {
     controller.handleToggleFormat();
   });
+
+const clock: HTMLElement | null = document.getElementById('clock');
+const toggleLight: HTMLElement | null = document.getElementById('toggle-light');
+
+toggleLight &&
+  toggleLight.addEventListener('click', () => {
+    controller.handleLightToggle();
+    toggleLight.innerText = view.displayLightStatus(model.isLightOn());
+    clock && model.isLightOn() && clock.classList.toggle('active');
+  });
+
+console.log('🌴 ', model.isLightOn());
+
+// clock && model.isLightOn() && clock.classList.toggle('active');
+
+// lightOn && clock && clock.classList.toggle('active');
+
+// modeToggleBtn &&
+//   modeToggleBtn.addEventListener('click', () => {
+//     controller.handleModeToggle();
+//     updateButtonLabel();
+//   });

@@ -13,7 +13,6 @@ export class WatchModel {
 
   getCurrentTime(): Date {
     this.time = new Date();
-    console.log('incr ', this.increase);
     this.time.setHours(this.time.getHours() + this.increase.hour);
     this.time.setMinutes(this.time.getMinutes() + this.increase.minute);
     return this.time;
