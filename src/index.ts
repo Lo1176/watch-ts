@@ -72,9 +72,3 @@ toggleLight &&
     toggleLight.innerText = view.displayLightStatus(model.isLightOn());
     clock && clock.classList.toggle('active');
   });
-
-// modeToggleBtn &&
-//   modeToggleBtn.addEventListener('click', () => {
-//     controller.handleModeToggle();
-//     updateButtonLabel();
-//   });

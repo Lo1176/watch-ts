@@ -7,17 +7,18 @@ export class WatchView {
   }
 
   displayTime(time: Date): void {
+    const formatOptions: Intl.DateTimeFormatOptions = {
+      hour12: this.model.getTimeFormat().includes('A'),
+    };
+    const formattedTime: string = time.toLocaleTimeString(
+      undefined,
+      formatOptions
+    );
+    console.log('🚀 ~ WatchView ~ displayTime ~ formattedTime:', formattedTime);
+
     const hours: string = time.getHours().toString().padStart(2, '0');
     const minutes: string = time.getMinutes().toString().padStart(2, '0');
     const seconds: string = time.getSeconds().toString().padStart(2, '0');
-    // const formatOptions: Intl.DateTimeFormatOptions = {
-    //   hour12: this.model.getTimeFormat().includes('A'),
-    // };
-    // const formattedTime: string = time.toLocaleTimeString(
-    //   undefined,
-    //   formatOptions
-    // );
-    // console.log('🚀 ~ WatchView ~ displayTime ~ formattedTime:', formattedTime);
 
     const hoursAndMinutesDisplay: HTMLElement | null =
       document.getElementById('hours-and-minutes');
