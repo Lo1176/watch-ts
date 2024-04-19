@@ -13,19 +13,24 @@
 
 <body>
     <h1>Le maître du temps</h1>
-    <div id="clock" class="light">
-        <p id="hours-minutes"></p>
-        <p id="seconds"></p>
-        <p id="am-pm"></p>
+    <div id="clocks-container">
+        <div class="clock-container">
+            <div id="clock" class="light">
+                <p id="hours-minutes"></p>
+                <p id="seconds"></p>
+                <p id="am-pm"></p>
+            </div>
+            <div class="buttons">
+                <button id="mode-toggle">Mode (off)</button>
+                <button id="increase-time">+ 1</button>
+                <button id="reset">reset</button>
+                <button id="toggle-format">Toggle Format</button>
+                <button id="toggle-light">Light off</button>
+            </div>
+        </div>
     </div>
 
-    <div class="buttons">
-        <button id="mode-toggle">Mode (off)</button>
-        <button id="increase-time">+ 1</button>
-        <button id="reset">reset</button>
-        <button id="toggle-format">Toggle Format</button>
-        <button id="toggle-light">Light off</button>
-    </div>
+    <!-- <button id="add-clock">Add Clock</button> -->
 </body>
 
 </html>

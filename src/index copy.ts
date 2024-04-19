@@ -1,7 +1,6 @@
 import { WatchController } from './controllers/WatchController';
 import './index.css';
 import { WatchModel } from './models/WatchModel';
-// import { createClock } from './utils';
 import { WatchView } from './views/WatchView';
 
 const model = new WatchModel();
@@ -73,10 +72,3 @@ toggleLight &&
     toggleLight.innerText = view.displayLightStatus(model.isLightOn());
     clock && clock.classList.toggle('active');
   });
-
-// const clocksContainer = document.getElementById('clocks-container');
-// const addClockBtn = document.getElementById('add-clock');
-// addClockBtn &&
-//   addClockBtn.addEventListener('click', () => {
-//     createClock(clocksContainer);
-//   });
