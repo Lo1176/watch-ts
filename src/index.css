@@ -36,7 +36,12 @@ body {
   margin-right: 2px;
 }
 
-#time-display {
+#hours-minutes {
   font-size: 24px;
   font-weight: bold;
+}
+
+#am-pm {
+  font-weight: bold;
+  font-size: 12px;
 }

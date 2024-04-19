@@ -7,13 +7,21 @@ export class WatchView {
   }
 
   displayTime(time: string): void {
-    const currentTime: string = time;
+    const [timeString, h12] = time.split(' ');
+    const [hours, minutes, seconds] = timeString.split(':');
 
-    const timeDisplay: HTMLElement | null =
-      document.getElementById('time-display');
+    const hoursMinutesDisplay: HTMLElement | null =
+      document.getElementById('hours-minutes');
+    const secondsDisplay: HTMLElement | null =
+      document.getElementById('seconds');
+    const amPmDisplay: HTMLElement | null = document.getElementById('am-pm');
 
-    if (timeDisplay) {
-      timeDisplay.innerText = currentTime;
+    if (hoursMinutesDisplay && secondsDisplay && amPmDisplay) {
+      hoursMinutesDisplay.innerText = `${hours}:${minutes} `;
+      secondsDisplay.innerText = seconds;
+      h12 !== undefined
+        ? (amPmDisplay.innerText = h12)
+        : (amPmDisplay.innerText = '');
     } else {
       throw new Error('Elements for displaying time not found.');
     }
