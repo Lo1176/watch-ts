@@ -11,11 +11,11 @@ export class WatchModel {
     this.lightOn = false;
   }
 
-  getCurrentTime(): Date {
+  getCurrentTime(): string {
     this.time = new Date();
     this.time.setHours(this.time.getHours() + this.increase.hour);
     this.time.setMinutes(this.time.getMinutes() + this.increase.minute);
-    return this.time;
+    return this.formatTime(this.time);
   }
 
   setTime(newTime: Date): void {
@@ -63,5 +63,14 @@ export class WatchModel {
 
   getTimeFormat(): string {
     return this.is24HourFormat ? 'HH:mm:ss' : 'hh:mm:ss A';
+  }
+
+  private formatTime(time: Date): string {
+    return time.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: !this.is24HourFormat,
+    });
   }
 }

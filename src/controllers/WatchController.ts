@@ -32,7 +32,7 @@ export class WatchController {
   }
 
   updateView(): void {
-    const currentTime: Date = this.model.getCurrentTime();
+    const currentTime: string = this.model.getCurrentTime();
     const lightOn: boolean = this.model.isLightOn();
     this.view.displayTime(currentTime);
     this.view.displayLightStatus(lightOn);
